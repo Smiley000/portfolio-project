@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Home - Pet Pals</title></head>
+<body>
+<h1>Welcome <%= user ? user.username : "Guest" %> to Pet Pals!</h1>
+<p>Your source for adoptable pets, both local and global.</p>
+<nav>
+  <a href="/about">About</a> |
+  <% if (!user) { %>
+    <a href="/register">Register</a> |
+    <a href="/login">Login</a>
+  <% } else { %>
+    <a href="/logout">Logout</a> |
+    <a href="/search">Search Pets</a> |
+    <a href="/api-pets">Adoptable Pets</a>
+  <% } %>
+</nav>
+</body>
+</html>

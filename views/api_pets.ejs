@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Adoptable Pets</title>
+</head>
+<body>
+  <h2>Adoptable Pets from TheCatAPI</h2>
+  <ul>
+    <% apiPets.forEach(cat => { %>
+      <li>
+        <% if (cat.image && cat.image.url) { %>
+          <img src="<%= cat.image.url %>" alt="<%= cat.name %>" width="100">
+        <% } %>
+        <strong><%= cat.name %></strong> - Origin: <%= cat.origin %>
+      </li>
+    <% }) %>
+  </ul>
+  <a href="/">Home</a>
+</body>
+</html>
